@@ -1,4 +1,4 @@
-# 🛡️ YOLO Unauthorized Person Detection System
+# 🛡️ EagleEye Unauthorized Person Detection System
 
 A complete, modular, and production-ready system for detecting unauthorized persons using YOLOv8 and face recognition. Built with Python, FastAPI, OpenCV, and Ultralytics YOLOv8.
 
@@ -491,3 +491,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Built with ❤️ for security and safety**
+
