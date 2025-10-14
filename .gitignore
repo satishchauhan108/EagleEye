@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+yolo_env/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+logs/*.log
+logs/*.csv
+logs/*.db
+logs/debug_frames/
+models/*.pt
+models/*.onnx
+models/*.engine
+dataset/face_embeddings.npy
+temp_alert_frame.jpg
+*.wav
+
+# Configuration (keep template)
+# config/config.yaml
+
+# Face images (keep structure, ignore content)
+dataset/authorized_faces/*/
+dataset/test_images/*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
