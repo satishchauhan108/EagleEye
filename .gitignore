@@ -66,3 +66,4 @@ dataset/test_images/*
 *.tmp
 *.temp
 .cache/
+*.pt
