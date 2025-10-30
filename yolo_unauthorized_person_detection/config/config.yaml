@@ -1,0 +1,148 @@
+# YOLO Unauthorized Person Detection System Configuration
+# This file contains all configurable parameters for the system
+
+# Model Configuration
+model:
+  # YOLO model path (will download if not exists)
+  yolo_model_path: "yolov8n.pt"
+  # Confidence threshold for person detection (0.0 - 1.0)
+  detection_confidence: 0.5
+  # Face recognition tolerance (lower = more strict, 0.4-0.6 recommended)
+  face_tolerance: 0.5
+  # Maximum number of faces to process per frame
+  max_faces_per_frame: 10
+
+# Camera Configuration
+camera:
+  # Camera index (0 for default webcam, 1 for external camera)
+  camera_index: 0
+  # Frame width
+  frame_width: 640
+  # Frame height
+  frame_height: 480
+  # FPS for video processing
+  fps: 30
+
+# Paths Configuration
+paths:
+  # Directory containing authorized face images
+  authorized_faces_dir: "dataset/authorized_faces"
+  # Directory for test images
+  test_images_dir: "dataset/test_images"
+  # Directory for log files
+  logs_dir: "logs"
+  # Directory for trained models
+  models_dir: "models"
+  # Face embeddings file
+  embeddings_file: "dataset/face_embeddings.npy"
+  # Authorized persons metadata file
+  authorized_persons_file: "dataset/authorized_persons.json"
+
+# Alert System Configuration
+alerts:
+  # Enable sound alerts
+  enable_sound: true
+  # Sound file path for unauthorized person alert
+  alert_sound_path: "alert_system/alert.wav"
+  # Enable email alerts
+  enable_email: false
+  # Enable SMS alerts (requires Twilio)
+  enable_sms: false
+  # Alert cooldown period in seconds (to prevent spam)
+  alert_cooldown: 30
+
+# Email Configuration (for alerts)
+email:
+  smtp_server: "smtp.gmail.com"
+  smtp_port: 587
+  sender_email: "your_email@gmail.com"
+  sender_password: "your_app_password"
+  recipient_email: "admin@yourcompany.com"
+
+# SMS Configuration (Twilio)
+sms:
+  account_sid: "your_twilio_account_sid"
+  auth_token: "your_twilio_auth_token"
+  from_number: "+1234567890"
+  to_number: "+0987654321"
+
+# API Server Configuration
+api:
+  # Host address
+  host: "0.0.0.0"
+  # Port number
+  port: 8000
+  # Enable CORS
+  enable_cors: true
+  # API key for authentication (optional)
+  api_key: "your_api_key_here"
+
+# Logging Configuration
+logging:
+  # Log level (DEBUG, INFO, WARNING, ERROR)
+  log_level: "INFO"
+  # Log file path
+  log_file: "logs/detection.log"
+  # Enable console logging
+  enable_console_log: true
+  # Log format
+  log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Display Configuration
+display:
+  # Show detection confidence scores
+  show_confidence: true
+  # Show FPS counter
+  show_fps: true
+  # Font scale for text overlay
+  font_scale: 0.7
+  # Font thickness
+  font_thickness: 2
+  # Colors (BGR format)
+  colors:
+    authorized: [0, 255, 0]      # Green
+    unauthorized: [0, 0, 255]    # Red
+    text: [255, 255, 255]        # White
+    background: [0, 0, 0]        # Black
+
+# Performance Configuration
+performance:
+  # Use GPU if available
+  use_gpu: true
+  # Number of threads for CPU processing
+  num_threads: 4
+  # Skip frames for performance (process every Nth frame)
+  frame_skip: 1
+
+# Security Configuration
+security:
+  # Maximum number of unauthorized attempts before lockout
+  max_unauthorized_attempts: 5
+  # Lockout duration in minutes
+  lockout_duration: 15
+  # Enable face blur for unauthorized persons
+  blur_unauthorized_faces: false
+  # Blur intensity (0-100)
+  blur_intensity: 50
+
+# Raspberry Pi Specific Configuration
+raspberry_pi:
+  # Enable GPIO for hardware integration
+  enable_gpio: false
+  # GPIO pin for door lock relay
+  door_lock_pin: 18
+  # GPIO pin for alarm buzzer
+  alarm_pin: 19
+  # GPIO pin for LED indicator
+  led_pin: 21
+
+# Development Configuration
+development:
+  # Enable debug mode
+  debug_mode: false
+  # Save detection frames for debugging
+  save_debug_frames: false
+  # Debug frames directory
+  debug_frames_dir: "logs/debug_frames"
+  # Maximum debug frames to save
+  max_debug_frames: 100
