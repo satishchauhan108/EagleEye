@@ -67,3 +67,5 @@ dataset/test_images/*
 *.temp
 .cache/
 *.pt
+/venv311/
+*.pt
