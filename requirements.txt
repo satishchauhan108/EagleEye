@@ -1,0 +1,12 @@
+# Recommended Python: 3.8+
+# No pinned versions are specified in this repository; install current compatible releases.
+
+# Core dependencies (data prep, training, inference, evaluation)
+ultralytics
+opencv-python
+numpy
+scikit-learn
+
+# Optional: diagram generation scripts (generate_architecture_diagram.py, generate_yolov8_internal_diagram.py)
+# Also requires the Graphviz system binary (`dot`) on PATH — not installable via pip alone.
+graphviz
